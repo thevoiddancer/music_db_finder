@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "music-db-finder"
+version = "0.1.0"
+description = "Music db finder"
+authors = ["Tomislav Nazifovic <tomislav.nazifovic@gmail.com>"]
+license = "GNU"
+readme = "README.md"
+packages = [{include = "music_db_finder"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+rapidfuzz = "^3.9.3"
+spotipy = "^2.24.0"
+ytmusicapi = "^1.7.3"
+python3-discogs-client = "^2.7"
+ipykernel = "^6.29.4"
+rich = "^13.7.1"
+python-dotenv = "^1.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
