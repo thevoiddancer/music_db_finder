@@ -4,8 +4,7 @@ version = "0.1.0"
 description = "Music db finder"
 authors = ["Tomislav Nazifovic <tomislav.nazifovic@gmail.com>"]
 license = "GNU"
-readme = "README.md"
-packages = [{include = "music_db_finder"}]
+packages = [{include = "music_db_finder", from = "src"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
