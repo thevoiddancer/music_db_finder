@@ -16,7 +16,7 @@ def get_name_as_str(object):
     if type(object) == str:
         return object.lower()
     if type(object) == dict:
-        return object['name']
+        return object['name'].lower()
     else:
         return get_discogs_name(object).lower()
 
