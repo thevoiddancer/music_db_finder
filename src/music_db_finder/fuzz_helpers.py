@@ -17,7 +17,7 @@ def get_name_as_str(object):
     if type(object) is str:
         return object.lower()
     if type(object) is dict:
-        return object["name"].lower()
+        return object.get('name', object.get('artist', object.get('title'))).lower()
     else:
         return get_discogs_name(object).lower()
 
