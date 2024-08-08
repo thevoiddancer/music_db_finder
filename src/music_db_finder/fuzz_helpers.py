@@ -10,16 +10,20 @@ def get_discogs_name(object):
         name = object.title
         if object.data["artist"] + " - " in name:
             name = name.split(" - ")[1]
+    else:
+        raise TypeError('Object not Discogs type')
     return name
 
 
 def get_name_as_str(object):
     if type(object) is str:
         return object.lower()
-    if type(object) is dict:
+    elif type(object) is dict:
         return object.get('name', object.get('artist', object.get('title'))).lower()
-    else:
+    elif getattr(object, '__module__') == 'discogs_client.models':
         return get_discogs_name(object).lower()
+    else:
+        raise TypeError('Unknown object type.')
 
 
 def obj_ratio(a, b, scorer=r_fuzz.token_sort_ratio, *args, **kwargs):
